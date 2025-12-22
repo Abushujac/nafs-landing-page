@@ -690,13 +690,19 @@
       button.textContent = 'Submitting...';
       
       try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('_subject', 'New Waitlist Signup - Science of Nafs');
+        
         const response = await fetch('https://formspree.io/f/mjgbpyzl', {
           method: 'POST',
+          body: formData,
           headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email })
+            'Accept': 'application/json'
+          }
         });
+        
+        const data = await response.json();
         
         if (response.ok) {
           errorDiv.classList.remove('show');
@@ -708,9 +714,10 @@
             button.textContent = 'Join the Waitlist';
           }, 5000);
         } else {
-          throw new Error('Failed to subscribe');
+          throw new Error(data.error || 'Failed to subscribe');
         }
       } catch (error) {
+        console.error('Form submission error:', error);
         errorDiv.textContent = 'Something went wrong. Please try again.';
         errorDiv.classList.add('show');
         successDiv.classList.remove('show');

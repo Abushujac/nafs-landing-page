@@ -430,8 +430,9 @@
           <p style="margin-top: 0.5rem;">✓ You're on the list! We'll be in touch soon.</p>
         </div>
         <div id="heroError" class="error-message">Please enter a valid email address.</div>
-        <form id="heroForm">
-          <input type="email" id="heroEmail" placeholder="Enter your email" required>
+        <form id="heroForm" action="https://formspree.io/f/mjgbpyzl" method="POST">
+          <input type="email" name="email" id="heroEmail" placeholder="Enter your email" required>
+          <input type="hidden" name="_subject" value="New Waitlist Signup - Science of Nafs">
           <button type="submit" class="cta-button">Join the Waitlist</button>
         </form>
         <p class="form-note">Be the first to know when registration opens</p>
@@ -654,8 +655,9 @@
           <p style="margin-top: 0.5rem;">✓ You're on the list! We'll be in touch soon.</p>
         </div>
         <div id="finalError" class="error-message">Please enter a valid email address.</div>
-        <form id="finalForm">
-          <input type="email" id="finalEmail" placeholder="Enter your email" required>
+        <form id="finalForm" action="https://formspree.io/f/mjgbpyzl" method="POST">
+          <input type="email" name="email" id="finalEmail" placeholder="Enter your email" required>
+          <input type="hidden" name="_subject" value="New Waitlist Signup - Science of Nafs">
           <button type="submit" class="cta-button">Join the Waitlist</button>
         </form>
         <p class="form-note">Limited spots available</p>
@@ -739,16 +741,98 @@
       }
     }
     
-    document.getElementById('heroForm').addEventListener('submit', function(e) {
+    document.getElementById('heroForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const email = document.getElementById('heroEmail').value;
-      saveEmail(email, 'hero');
+      const successDiv = document.getElementById('heroSuccess');
+      const errorDiv = document.getElementById('heroError');
+      const button = this.querySelector('button');
+      const input = this.querySelector('input[type="email"]');
+      
+      if (!validateEmail(email)) {
+        errorDiv.textContent = 'Please enter a valid email address.';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
+        return;
+      }
+      
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+      
+      try {
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          errorDiv.classList.remove('show');
+          successDiv.classList.add('show');
+          input.value = '';
+          button.disabled = false;
+          button.textContent = 'Join the Waitlist';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        console.error('Form error:', error);
+        errorDiv.textContent = 'Something went wrong. Please try again.';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
+        button.disabled = false;
+        button.textContent = 'Join the Waitlist';
+      }
     });
     
-    document.getElementById('finalForm').addEventListener('submit', function(e) {
+    document.getElementById('finalForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const email = document.getElementById('finalEmail').value;
-      saveEmail(email, 'final');
+      const successDiv = document.getElementById('finalSuccess');
+      const errorDiv = document.getElementById('finalError');
+      const button = this.querySelector('button');
+      const input = this.querySelector('input[type="email"]');
+      
+      if (!validateEmail(email)) {
+        errorDiv.textContent = 'Please enter a valid email address.';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
+        return;
+      }
+      
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+      
+      try {
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          errorDiv.classList.remove('show');
+          successDiv.classList.add('show');
+          input.value = '';
+          button.disabled = false;
+          button.textContent = 'Join the Waitlist';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        console.error('Form error:', error);
+        errorDiv.textContent = 'Something went wrong. Please try again.';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
+        button.disabled = false;
+        button.textContent = 'Join the Waitlist';
+      }
     });
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

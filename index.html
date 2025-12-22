@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Master the Science of Nafs in 3 powerful live sessions. Productivity begins within. $27 - 3-Day Live Challenge">
+  <meta name="description" content="Master the Science of Nafs in 3 powerful live sessions. Productivity begins within. Join the waitlist.">
   <title>Science of Nafs – 3 Day Live Challenge | ProductivityToPurpose</title>
   
   <style>
@@ -396,7 +396,7 @@
   <nav>
     <div class="nav-container">
       <div class="logo">productivitytopurpose.com</div>
-      <a href="#join" class="nav-cta">Join Now - $27</a>
+      <a href="#join" class="nav-cta">Join Waitlist</a>
     </div>
   </nav>
 
@@ -408,17 +408,17 @@
       <p class="hero-description">
         Finally understand why discipline, focus, and consistency break down.
       </p>
-      <p class="hero-info">🗓 3 Days · ⏰ 1 Hour Live Each Day · 💵 $27</p>
+      <p class="hero-info">🗓 3 Days · ⏰ 1 Hour Live Each Day</p>
       <p class="hero-dates">📅 January 24-26, 2026 · 🕓 4:00 PM CST</p>
       
       <div class="form-box">
-        <div id="heroSuccess" class="success-message">✓ Email saved! Redirecting to payment...</div>
+        <div id="heroSuccess" class="success-message">✓ You're on the list! Check your email for next steps.</div>
         <div id="heroError" class="error-message">Please enter a valid email address.</div>
         <form id="heroForm">
           <input type="email" id="heroEmail" placeholder="Enter your email" required>
-          <button type="submit" class="cta-button">Join the 3-Day Live Challenge – $27</button>
+          <button type="submit" class="cta-button">Join the Waitlist</button>
         </form>
-        <p class="form-note">Secure payment • Instant access</p>
+        <p class="form-note">Be the first to know when registration opens</p>
       </div>
     </div>
   </section>
@@ -621,15 +621,6 @@
           Eventually, yes. But not through hacks. Through clarity and inner discipline. When your Nafs is at peace, your actions become naturally productive.
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Is this refundable?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          All sales are final. We want committed participants who are ready for transformation.
-        </div>
-      </div>
     </div>
   </section>
 
@@ -641,14 +632,13 @@
       </p>
       
       <div class="form-box">
-        <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: var(--stone-800);">$27</p>
-        <div id="finalSuccess" class="success-message">✓ Email saved! Redirecting to payment...</div>
+        <div id="finalSuccess" class="success-message">✓ You're on the list! Check your email for next steps.</div>
         <div id="finalError" class="error-message">Please enter a valid email address.</div>
         <form id="finalForm">
           <input type="email" id="finalEmail" placeholder="Enter your email" required>
-          <button type="submit" class="cta-button">Join the 3-Day Live Challenge – $27</button>
+          <button type="submit" class="cta-button">Join the Waitlist</button>
         </form>
-        <p class="form-note">Limited spots • All sales final</p>
+        <p class="form-note">Limited spots available</p>
       </div>
     </div>
   </section>
@@ -658,35 +648,56 @@
   </footer>
 
   <script>
-    const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/14A5kCfOof7PfR7eDgbjW00';
-    
     function validateEmail(email) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
     }
     
-    function saveEmailAndRedirect(email, formId) {
+    async function saveEmail(email, formId) {
       const successDiv = document.getElementById(formId + 'Success');
       const errorDiv = document.getElementById(formId + 'Error');
       const button = document.querySelector(`#${formId} button`);
+      const input = document.querySelector(`#${formId} input`);
       
       if (!validateEmail(email)) {
+        errorDiv.textContent = 'Please enter a valid email address.';
         errorDiv.classList.add('show');
         successDiv.classList.remove('show');
         return;
       }
       
-      errorDiv.classList.remove('show');
-      successDiv.classList.add('show');
       button.disabled = true;
-      button.textContent = 'Redirecting...';
+      button.textContent = 'Submitting...';
       
-      localStorage.setItem('nafs_challenge_email', email);
-      localStorage.setItem('nafs_challenge_timestamp', new Date().toISOString());
-      
-      setTimeout(() => {
-        window.location.href = STRIPE_PAYMENT_LINK + '?prefilled_email=' + encodeURIComponent(email);
-      }, 1000);
+      try {
+        const response = await fetch('https://formspree.io/f/mjgbpyzl', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email })
+        });
+        
+        if (response.ok) {
+          errorDiv.classList.remove('show');
+          successDiv.classList.add('show');
+          input.value = '';
+          
+          setTimeout(() => {
+            button.disabled = false;
+            button.textContent = 'Join the Waitlist';
+            successDiv.classList.remove('show');
+          }, 3000);
+        } else {
+          throw new Error('Failed to subscribe');
+        }
+      } catch (error) {
+        errorDiv.textContent = 'Something went wrong. Please try again.';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
+        button.disabled = false;
+        button.textContent = 'Join the Waitlist';
+      }
     }
     
     function toggleFaq(button) {
@@ -705,13 +716,13 @@
     document.getElementById('heroForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('heroEmail').value;
-      saveEmailAndRedirect(email, 'hero');
+      saveEmail(email, 'hero');
     });
     
     document.getElementById('finalForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const email = document.getElementById('finalEmail').value;
-      saveEmailAndRedirect(email, 'final');
+      saveEmail(email, 'final');
     });
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

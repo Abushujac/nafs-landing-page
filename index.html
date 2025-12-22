@@ -162,7 +162,10 @@
       padding: 1rem;
       border-radius: 0.375rem;
       margin-bottom: 1rem;
-      display: none;
+      display: none !important;
+    }
+    .success-message.show {
+      display: block !important;
     }
     .error-message {
       background: #fee2e2;
@@ -170,7 +173,10 @@
       padding: 1rem;
       border-radius: 0.375rem;
       margin-bottom: 1rem;
-      display: none;
+      display: none !important;
+    }
+    .error-message.show {
+      display: block !important;
     }
     section {
       padding: 5rem 1rem;
@@ -665,13 +671,13 @@
       const button = document.querySelector(`#${formId} button`);
       
       if (!validateEmail(email)) {
-        errorDiv.style.display = 'block';
-        successDiv.style.display = 'none';
+        errorDiv.classList.add('show');
+        successDiv.classList.remove('show');
         return;
       }
       
-      errorDiv.style.display = 'none';
-      successDiv.style.display = 'block';
+      errorDiv.classList.remove('show');
+      successDiv.classList.add('show');
       button.disabled = true;
       button.textContent = 'Redirecting...';
       

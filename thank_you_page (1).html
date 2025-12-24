@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for joining the Science of Nafs waitlist">
+  <title>Thank You | ProductivityToPurpose</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --green-dark: #065f46;
+      --green: #047857;
+      --green-light: #10b981;
+      --stone-50: #fafaf9;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-600: #57534e;
+      --stone-700: #44403c;
+      --stone-800: #292524;
+      --stone-900: #1c1917;
+      --white: #ffffff;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--stone-800);
+      background: linear-gradient(to bottom, #064e3b, #047857);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 60px 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      animation: scaleIn 0.5s ease-out;
+    }
+    .checkmark svg {
+      width: 50px;
+      height: 50px;
+      stroke: white;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      animation: drawCheck 0.5s ease-out 0.3s forwards;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+    }
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes drawCheck {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--stone-700);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .info-box {
+      background: linear-gradient(to right, #f0fdf4, white);
+      border-left: 4px solid var(--green);
+      padding: 25px;
+      border-radius: 8px;
+      margin: 30px 0;
+      text-align: left;
+    }
+    .info-box h2 {
+      font-size: 1.125rem;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .info-box p {
+      font-size: 1rem;
+      color: var(--stone-700);
+      line-height: 1.8;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .info-item span {
+      flex-shrink: 0;
+      color: var(--green);
+      font-weight: 600;
+    }
+    .home-button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(4, 120, 87, 0.3);
+      margin-top: 20px;
+    }
+    .home-button:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(4, 120, 87, 0.4);
+    }
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--stone-200);
+      font-size: 0.875rem;
+      color: var(--stone-600);
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding: 40px 25px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .subtitle {
+        font-size: 1.125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52">
+        <polyline points="14 27 22 35 38 19"/>
+      </svg>
+    </div>
+    
+    <h1>You're On The List!</h1>
+    <p class="subtitle">
+      Your journey to inner clarity begins soon.
+    </p>
+    
+    <div class="info-box">
+      <h2>What Happens Next?</h2>
+      <div class="info-item">
+        <span>✓</span>
+        <p>Check your email for a confirmation message</p>
+      </div>
+      <div class="info-item">
+        <span>✓</span>
+        <p>You'll be notified when registration opens</p>
+      </div>
+      <div class="info-item">
+        <span>✓</span>
+        <p>Receive all details about the 3-Day Live Challenge</p>
+      </div>
+    </div>
+    
+    <div class="info-box" style="background: linear-gradient(to right, #fffbeb, white); border-left-color: #d97706;">
+      <h2 style="color: #b45309;">📅 Save The Dates</h2>
+      <p style="font-weight: 600; color: var(--stone-800); margin-bottom: 8px;">
+        January 24-26, 2026 · 4:00 PM CST
+      </p>
+      <p>
+        Make sure to block these dates on your calendar. This is a live experience—presence is essential.
+      </p>
+    </div>
+    
+    <a href="index.html" class="home-button">Return to Home</a>
+    
+    <div class="footer-note">
+      <p>
+        <strong>Productivity begins within.</strong><br>
+        We look forward to guiding you through the Science of Nafs.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

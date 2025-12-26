@@ -87,563 +87,153 @@
       margin-bottom: 1.5rem;
       line-height: 1.2;
     }
-    .hero-subtitle {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: #d1fae5;
+  </style>
+
+  <!-- START Brevo form CSS in head -->
+  <style>
+    @font-face {
+      font-display: block;
+      font-family: Roboto;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
     }
-    .hero-description {
-      font-size: 1.125rem;
-      max-width: 42rem;
-      margin: 0 auto 2rem;
-      color: #e0f2fe;
-      line-height: 1.8;
-    }
-    .hero-info {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #d1fae5;
-    }
-    .hero-dates {
-      font-size: 1.125rem;
-      margin-bottom: 2rem;
-      color: #fef3c7;
+
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
       font-weight: 600;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
     }
-    .form-box {
-      background: white;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      max-width: 28rem;
-      margin: 0 auto;
+
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
+      font-weight: 700;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
     }
-    .form-box input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--stone-200);
-      border-radius: 0.375rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    .form-box input:focus {
-      outline: none;
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.1);
-    }
-    .cta-button {
-      width: 100%;
-      background: var(--green);
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 0.375rem;
-      font-size: 1.125rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .cta-button:hover {
-      background: var(--green-dark);
-    }
-    .form-note {
-      font-size: 0.875rem;
-      color: var(--stone-600);
-      margin-top: 1rem;
-      text-align: center;
-    }
-    section {
-      padding: 5rem 1rem;
-    }
-    .section-container {
-      max-width: 64rem;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--stone-800);
-    }
-    .text-center {
-      text-align: center;
-    }
-    .text-lg {
-      font-size: 1.125rem;
-    }
-    .text-xl {
-      font-size: 1.25rem;
-    }
-    .space-y-4 > * + * {
-      margin-top: 1rem;
-    }
-    .space-y-6 > * + * {
-      margin-top: 1.5rem;
-    }
-    .max-w-2xl {
-      max-width: 42rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .dark-section {
-      background: #064e3b;
-      color: white;
-    }
-    .dark-section h2 {
-      color: white;
-    }
-    .text-emerald {
-      color: #d1fae5;
-    }
-    .day-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .day-card {
-      display: flex;
-      gap: 1rem;
-      padding: 2rem;
-      border-radius: 0.5rem;
-      border-left: 4px solid var(--green);
-      background: linear-gradient(to right, #f0fdf4, white);
-    }
-    .day-card.amber {
-      border-left-color: var(--amber);
-      background: linear-gradient(to right, #fffbeb, white);
-    }
-    .day-card.dark {
-      border-left-color: var(--green-dark);
-    }
-    .day-number {
-      width: 3rem;
-      height: 3rem;
-      background: var(--green);
-      color: white;
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-    .day-number.amber {
-      background: var(--amber);
-    }
-    .day-number.dark {
-      background: var(--green-dark);
-    }
-    .day-content h3 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      color: var(--stone-800);
-    }
-    .day-content p {
-      color: var(--stone-700);
-    }
-    .day-content .day-date {
-      font-size: 0.875rem;
-      color: var(--stone-600);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .feature-box {
-      background: #065f46;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      text-align: center;
-    }
-    .feature-box h3 {
-      font-size: 1.125rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      color: white;
-    }
-    .feature-box p {
-      color: #d1fae5;
-    }
-    .check-list {
-      list-style: none;
-    }
-    .check-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .check-icon {
-      color: var(--green);
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-    .faq-container {
-      max-width: 64rem;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border: 1px solid var(--stone-200);
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-      overflow: hidden;
-    }
-    .faq-question {
-      width: 100%;
+
+    #sib-container input::placeholder {
       text-align: left;
-      padding: 1.5rem;
-      background: white;
-      border: none;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--stone-800);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s;
+      font-family: Helvetica, sans-serif;
+      color: #c0ccda;
     }
-    .faq-question:hover {
-      background: var(--stone-50);
-    }
-    .faq-toggle {
-      font-size: 1.5rem;
-      color: var(--green);
-    }
-    .faq-answer {
-      padding: 0 1.5rem 1.5rem;
-      color: var(--stone-700);
-      display: none;
-    }
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-    .faq-item.open .faq-toggle::before {
-      content: '−';
-    }
-    .faq-toggle::before {
-      content: '+';
-    }
-    footer {
-      background: var(--stone-900);
-      color: var(--stone-600);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    @media (min-width: 640px) {
-      h1 {
-        font-size: 3rem;
-      }
-      h2 {
-        font-size: 2.25rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      h1 {
-        font-size: 3.75rem;
-      }
-    }
-    @media (max-width: 640px) {
-      .nav-cta {
-        font-size: 0.875rem;
-        padding: 0.5rem 1rem;
-      }
-    }
-    .emphasis {
-      font-weight: 600;
-      color: var(--green-dark);
-    }
-    .white-text {
-      color: white !important;
+    #sib-container a {
+      text-decoration: underline;
+      color: #2BB2FC;
     }
   </style>
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+  <!-- END Brevo form CSS in head -->
+
 </head>
 <body>
+
   <nav>
     <div class="nav-container">
-      <div class="logo">productivitytopurpose.com</div>
-      <a href="#join" class="nav-cta">Join Waitlist</a>
+      <div class="logo">ProductivityToPurpose</div>
+      <a class="nav-cta" href="#waitlist">Join Waitlist</a>
     </div>
   </nav>
 
   <section class="hero">
-    <div class="section-container">
-      <span class="badge">3-Day Live Challenge</span>
-      <h1>Productivity Begins Within</h1>
-      <p class="hero-subtitle">Master the Science of Nafs in 3 powerful live sessions</p>
-      <p class="hero-description">
-        Finally understand why discipline, focus, and consistency break down.
-      </p>
-      <p class="hero-info">🗓 3 Days · ⏰ 1 Hour Live Each Day</p>
-      <p class="hero-dates">📅 January 24-26, 2026 · 🕓 4:00 PM CST</p>
-      
-      <div class="form-box">
-        <form action="https://formspree.io/f/mjgbpyzl" method="POST">
-          <input type="email" name="email" placeholder="Enter your email" required>
-          <input type="hidden" name="_next" value="https://productivitytopurpose.com/thank-you">
-          <input type="hidden" name="_subject" value="New Waitlist Signup - Science of Nafs">
-          <button type="submit" class="cta-button">Join the Waitlist</button>
-        </form>
-        <p class="form-note">Be the first to know when registration opens</p>
-      </div>
-    </div>
+    <div class="badge">3-Day Live Challenge</div>
+    <h1>Master the Science of Nafs in 3 powerful live sessions</h1>
+    <p>Productivity begins within</p>
   </section>
 
-  <section style="background: white;">
-    <div class="section-container">
-      <h2>The Real Problem</h2>
-      <div class="max-w-2xl text-center text-lg space-y-4">
-        <p>You don't lack motivation.</p>
-        <p>You don't lack time.</p>
-        <p>You don't lack discipline.</p>
-        <p class="text-xl emphasis" style="padding-top: 1rem;">
-          You lack inner clarity.
-        </p>
-        <p style="padding-top: 1rem;">
-          Until the self (Nafs) is understood, no system, schedule, or habit will last.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark-section">
-    <div class="section-container">
-      <h2 class="white-text">The Science of Nafs</h2>
-      <div class="max-w-2xl text-lg space-y-6 text-emerald">
-        <p>
-          Islamic tradition teaches that real transformation begins inside. This challenge focuses on the inner self—the source of behavior, consistency, and leadership.
-        </p>
-        <div class="text-center text-xl" style="padding-top: 1rem;">
-          <p>No productivity hacks.</p>
-          <p>No hustle culture.</p>
-          <p style="font-weight: 600; padding-top: 0.5rem; color: #d1fae5;">Just clarity, awareness, and alignment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background: white;">
-    <div class="section-container">
-      <h2>What You'll Experience</h2>
-      <p class="text-center text-lg" style="color: var(--stone-600); margin-bottom: 3rem;">
-        1 hour live each day
-      </p>
-      
-      <div class="day-cards">
-        <div class="day-card">
-          <div class="day-number">1</div>
-          <div class="day-content">
-            <div class="day-date">Friday, January 24 • 4:00 PM CST</div>
-            <h3>Day 1 – Awareness</h3>
-            <p>Understand the Nafs, self-sabotage, and why motivation fails.</p>
+  <!-- START Brevo Form HTML -->
+  <div id="waitlist">
+    <div class="sib-form" style="text-align: center; background-color: #EFF2F7;">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+              <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+            </svg>
+            <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
           </div>
         </div>
-        <div class="day-card amber">
-          <div class="day-number amber">2</div>
-          <div class="day-content">
-            <div class="day-date">Saturday, January 25 • 4:00 PM CST</div>
-            <h3>Day 2 – Alignment</h3>
-            <p>Resolve inner conflict and align intention with action.</p>
+
+        <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;max-width:540px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+              <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"/>
+            </svg>
+            <span class="sib-form-message-panel__inner-text">Your subscription has been successful.</span>
           </div>
         </div>
-        <div class="day-card dark">
-          <div class="day-number dark">3</div>
-          <div class="day-content">
-            <div class="day-date">Sunday, January 26 • 4:00 PM CST</div>
-            <h3>Day 3 – Transformation</h3>
-            <p>Build inner leadership, emotional discipline, and calm focus.</p>
-          </div>
+
+        <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+          <form id="sib-form" method="POST" action="https://4a8e7dca.sibforms.com/serve/MUIFAMGpjKFFZ3uzD24-tq2dQ-dqk-6O9kWmhHe54iyuhxmzM-43PUkTtCheZf1300c87_ZFZ5Sj_bo_RRTC5rmj0UxOJzht1q68dpTBcj2_CHMQMpj_5_I_L_-9eX9WyZetrNMxtzqBbb_JzO47ZEKAqftCT0tPCyZ_2UHGGnqUGhu0Q7TbGPvLoWai2HmniyrqhyMvHVgpxEJy2w==" data-type="subscription">
+            <div style="padding: 8px 0;">
+              <div class="sib-form-block" style="font-size:32px; text-align:left; font-weight:700; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
+                <p>Newsletter</p>
+              </div>
+            </div>
+            <div style="padding: 8px 0;">
+              <div class="sib-form-block" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#3C4858; background-color:transparent; text-align:left">
+                <div class="sib-text-form-block">
+                  <p>Subscribe to our newsletter and stay updated.</p>
+                </div>
+              </div>
+            </div>
+            <div style="padding: 8px 0;">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row ">
+                    <label class="entry__label" style="font-weight: 700; text-align:left; font-size:16px; font-family:Helvetica, sans-serif; color:#3c4858;" for="EMAIL" data-required="*">Enter your email address to subscribe</label>
+
+                    <div class="entry__field">
+                      <input class="input " type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="EMAIL" data-required="true" required />
+                    </div>
+                  </div>
+
+                  <label class="entry__error entry__error--primary" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+                  </label>
+                  <label class="entry__specification" style="font-size:12px; text-align:left; font-family:Helvetica, sans-serif; color:#8390A4;">
+                    Provide your email address to subscribe. For e.g abc@xyz.com
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div style="padding: 8px 0;">
+              <div class="sib-form-block" style="text-align: left">
+                <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px; font-weight:700; font-family:Helvetica, sans-serif; color:#FFFFFF; background-color:#3E4857; border-radius:3px; border-width:0px;" form="sib-form" type="submit">
+                  SUBSCRIBE
+                </button>
+              </div>
+            </div>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="en">
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  <!-- END Brevo Form HTML -->
 
-  <section class="dark-section">
-    <div class="section-container text-center">
-      <h2 class="white-text">This Is a Live Experience</h2>
-      <p class="text-xl text-emerald max-w-2xl" style="margin: 0 auto 2rem; line-height: 1.8;">
-        Not a course. Not a webinar. Not a replay you'll save for later and never watch.
-      </p>
-      
-      <div class="grid-3">
-        <div class="feature-box">
-          <h3>Live Teaching</h3>
-          <p>Real-time guidance</p>
-        </div>
-        <div class="feature-box">
-          <h3>Interactive</h3>
-          <p>Participate and engage</p>
-        </div>
-        <div class="feature-box">
-          <h3>Immediate Clarity</h3>
-          <p>Insights you can use</p>
-        </div>
-      </div>
-      
-      <p class="text-lg text-emerald" style="margin-top: 2rem;">
-        Replays are not guaranteed. Show up. Be present.
-      </p>
-    </div>
-  </section>
-
-  <section style="background: white;">
-    <div class="section-container">
-      <h2>Who This Is For</h2>
-      <div class="max-w-2xl text-lg space-y-4">
-        <ul class="check-list">
-          <li class="check-item">
-            <span class="check-icon">✓</span>
-            <span>Muslims in the Western world</span>
-          </li>
-          <li class="check-item">
-            <span class="check-icon">✓</span>
-            <span>Professionals & leaders</span>
-          </li>
-          <li class="check-item">
-            <span class="check-icon">✓</span>
-            <span>Anyone tired of hustle culture</span>
-          </li>
-          <li class="check-item">
-            <span class="check-icon">✓</span>
-            <span>Those seeking clarity before success</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section style="background: var(--stone-50);">
-    <div class="section-container">
-      <h2>About the Facilitator</h2>
-      <div class="max-w-2xl text-lg space-y-6">
-        <p>
-          I'm a life coach focused on purpose, self-leadership, and inner growth.
-        </p>
-        <p>
-          My work centers on Islamic self-development and practical application for modern life.
-        </p>
-        <p class="text-xl text-center emphasis" style="font-style: italic; padding-top: 1rem;">
-          You don't manage time. You lead the self.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section style="background: white;">
-    <div class="faq-container">
-      <h2>FAQ</h2>
-      
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>Do I need to be a practicing Muslim to join?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          This challenge is for Muslims seeking to strengthen their connection with their inner self through Islamic teachings. The framework is rooted in the Quran and Sunnah.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>Will there be a replay?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          Replays are not guaranteed. This is a live experience designed for presence, commitment, and real-time transformation.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>What if I miss a day?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          Each day builds on the previous one. The full transformation comes from completing all three days in sequence.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>Is this another productivity course?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          No. This is about understanding why we struggle—our inner self (Nafs)—and learning to lead it before we lead our lives.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>What do I need to prepare?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          Just yourself, a quiet space, and a journal. This is about reflection and inner work.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" onclick="toggleFaq(this)">
-          <span>Will this help me get more done?</span>
-          <span class="faq-toggle"></span>
-        </button>
-        <div class="faq-answer">
-          Eventually, yes. But not through hacks. Through clarity and inner discipline. When your Nafs is at peace, your actions become naturally productive.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero" id="join">
-    <div class="section-container">
-      <h2 class="white-text" style="font-size: 2.25rem;">Fix the Root, Not the Surface</h2>
-      <p class="text-xl text-emerald" style="margin-bottom: 3rem; line-height: 1.8;">
-        Inner clarity creates outer consistency.
-      </p>
-      
-      <div class="form-box">
-        <form action="https://formspree.io/f/mjgbpyzl" method="POST">
-          <input type="email" name="email" placeholder="Enter your email" required>
-          <input type="hidden" name="_next" value="https://productivitytopurpose.com/thank-you">
-          <input type="hidden" name="_subject" value="New Waitlist Signup - Science of Nafs">
-          <button type="submit" class="cta-button">Join the Waitlist</button>
-        </form>
-        <p class="form-note">Limited spots available</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 ProductivityToPurpose.com · All Rights Reserved</p>
-  </footer>
-
+  <!-- START Brevo Scripts -->
   <script>
-    function toggleFaq(button) {
-      const faqItem = button.parentElement;
-      const isOpen = faqItem.classList.contains('open');
-      
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('open');
-      });
-      
-      if (!isOpen) {
-        faqItem.classList.add('open');
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+    window.translation = {
+      common: {
+        selectedList: '{quantity} list selected',
+        selectedLists: '{quantity} lists selected',
+        selectedOption: '{quantity} selected',
+        selectedOptions: '{quantity} selected',
       }
-    }
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
+    };
+
+    var AUTOHIDE = Boolean(0);
   </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <!-- END Brevo Scripts -->
+
 </body>
 </html>
